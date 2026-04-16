@@ -1,0 +1,12 @@
+.DS_Store
+.claude/
+slides.pdf
+telejournal_3min.mp4
+figures_files/
+Rplots.pdf
+*.qmd
+*.Rmd
+notes.md
+slide_structure.md
+TODO.md
+custom.scss
