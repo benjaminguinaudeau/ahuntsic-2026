@@ -795,8 +795,34 @@ La téléréalité renforce la croyance en la méritocratie, masquant les inéga
 <section id="intéressés-par-les-impacts-sociaux-de-tiktok-de-lia-et-des-technologies-non-inventées-rejoignez-nous" class="slide level2" data-background-color="#0D4F77" style="color: white;">
 <h2>Intéressés par les impacts sociaux de TikTok, de l’IA et des technologies non-inventées ? Rejoignez-nous !</h2>
 
+<img data-src="assets/QR-Code.png" class="quarto-figure quarto-figure-center r-stretch" style="width:55.0%"><script>
+(function () {
+  function addQR() {
+    var t = document.querySelector('section.title-slide');
+    if (!t) { return setTimeout(addQR, 100); }
+    if (t.querySelector('img.qr-slides')) return;
+    var wrap = document.createElement('div');
+    wrap.className = 'qr-slides';
+    wrap.style.cssText = 'position:absolute; bottom:2em; right:2em; text-align:center; color:white; font-size:0.6em;';
+    var qr = document.createElement('img');
+    qr.src = 'assets/qr_slides.png';
+    qr.style.cssText = 'width:150px; height:150px; border-radius:6px; box-shadow:0 2px 12px rgba(0,0,0,0.4); display:block;';
+    var lbl = document.createElement('div');
+    lbl.textContent = 'Accéder aux slides';
+    lbl.style.cssText = 'margin-top:0.4em;';
+    wrap.appendChild(qr);
+    wrap.appendChild(lbl);
+    t.appendChild(wrap);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', addQR);
+  } else {
+    setTimeout(addQR, 50);
+  }
+})();
+</script>
 
-<img data-src="assets/QR-Code.png" class="quarto-figure quarto-figure-center r-stretch" style="width:55.0%"></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="assets/ulaval-logo.png" class="slide-logo"></p>
