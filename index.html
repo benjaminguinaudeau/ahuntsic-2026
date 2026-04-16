@@ -800,19 +800,24 @@ La téléréalité renforce la croyance en la méritocratie, masquant les inéga
   function addQR() {
     var t = document.querySelector('#title-slide');
     if (!t) { return setTimeout(addQR, 100); }
-    if (t.querySelector('img.qr-slides')) return;
+    if (t.querySelector('.qr-slides')) return;
     var wrap = document.createElement('div');
     wrap.className = 'qr-slides';
-    wrap.style.cssText = 'position:absolute; bottom:2em; right:2em; text-align:center; color:white; font-size:0.6em;';
+    wrap.style.cssText = 'text-align:center; color:white; font-size:0.5em; margin: 1em auto;';
     var qr = document.createElement('img');
     qr.src = 'assets/qr_slides.png';
-    qr.style.cssText = 'width:150px; height:150px; border-radius:6px; box-shadow:0 2px 12px rgba(0,0,0,0.4); display:block;';
+    qr.style.cssText = 'width:130px; height:130px; border-radius:6px; box-shadow:0 2px 12px rgba(0,0,0,0.4); display:inline-block;';
     var lbl = document.createElement('div');
     lbl.textContent = 'Accéder aux slides';
     lbl.style.cssText = 'margin-top:0.4em;';
     wrap.appendChild(qr);
     wrap.appendChild(lbl);
-    t.appendChild(wrap);
+    var authors = t.querySelector('.quarto-title-authors');
+    if (authors) {
+      t.insertBefore(wrap, authors);
+    } else {
+      t.appendChild(wrap);
+    }
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', addQR);
