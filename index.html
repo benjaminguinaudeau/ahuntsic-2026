@@ -798,7 +798,7 @@ La téléréalité renforce la croyance en la méritocratie, masquant les inéga
 <img data-src="assets/QR-Code.png" class="quarto-figure quarto-figure-center r-stretch" style="width:55.0%"><script>
 (function () {
   function addQR() {
-    var t = document.querySelector('section.title-slide');
+    var t = document.querySelector('#title-slide');
     if (!t) { return setTimeout(addQR, 100); }
     if (t.querySelector('img.qr-slides')) return;
     var wrap = document.createElement('div');
